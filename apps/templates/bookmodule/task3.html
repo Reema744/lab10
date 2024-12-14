@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Books Task 3</title>
+</head>
+<body>
+    <h1>Books with No Edition > 2 and No 'qu'</h1>
+    <p>Total Books: {{ count }}</p>
+    <ul>
+        {% for book in books %}
+        <li>{{ book.title }} by {{ book.author }} - Edition {{ book.edition }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

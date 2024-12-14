@@ -1,0 +1,28 @@
+{% extends 'bookmodule/layouts/base.html' %}
+
+{% block content %}
+<h1>List of Books</h1>
+
+<form method="POST" action="{% url 'book_search' %}">
+    {% csrf_token %}
+    <input type="text" name="keyword" placeholder="Search about Book or Auther">
+    <label>
+        <input type="checkbox" name="option1"> Title
+    </label>
+    <label>
+        <input type="checkbox" name="option2"> Author 
+    </label>
+    <button type="submit">Search</button>
+</form>
+
+{% if books %}
+    <h2>Search Result:</h2>
+    <ul>
+        {% for book in books %}
+            <li>{{ book.title }} by {{ book.author }}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No Result Found.</p>
+{% endif %}
+{% endblock %}
