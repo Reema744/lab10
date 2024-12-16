@@ -1,0 +1,114 @@
+/* إعدادات عامة للجسم */
+body {
+    background-color: #f0f0f0; /* لون خلفية الصفحة */
+    text-align: left;  /* توسيط النص */
+}
+
+/* تنسيق الحاوية */
+.link-container {
+    padding: 20px; /* إضافة مسافة داخل الحاوية */
+}
+
+/* تنسيق الروابط */
+.link {
+    display: block; /* عرض الروابط ككتل */
+    padding: 10px; /* إضافة مسافة داخل الرابط */
+    margin: 10px 0; /* إضافة مسافة بين الروابط */
+    text-decoration: none; /* إزالة التسطير */
+}
+
+/* نمط الرابط الأول */
+.green {
+    background-color: green; /* لون خلفية الرابط الأخضر */
+    color: rgb(239, 78, 14) !important; /* لون النص الأحمر */
+}
+
+/* نمط الرابط الثاني */
+.dark-gray {
+    background-color: darkgray; /* لون خلفية الرابط الرمادي الغامق */
+    color: rgb(255, 255, 0) !important; /* لون النص الأصفر */
+}
+
+/* نمط الرابط الثالث */
+.black {
+    background-color: black; /* لون خلفية الرابط الأسود */
+    color: white !important; /* لون النص الأبيض */
+}
+
+/* نمط الروابط عند زيارتها */
+.link:visited {
+    color: #6a6a6a; /* تغيير لون النص بعد الزيارة */
+}
+
+/* نمط الروابط عند التمرير فوقها */
+.link:hover {
+    opacity: 0.8; /* تغيير الشفافية عند التمرير */
+}
+
+/* نمط الروابط عند النقر عليها */
+.link:active {
+    opacity: 0.6; /* تغيير الشفافية عند النقر */
+}
+
+h1 {
+    background-color: #f5f5dc; /* Beige background */
+    color: #008000; /* Green text */
+    text-align: left; /* Align the text to the left */
+    margin-top: 20px; /* Margin at the top */
+    font-size: 2.5em; /* Font size */
+    padding: 10px; /* Padding around the text */
+}
+
+
+
+h1 {
+        background-color: turquoise; /* خلفية العنوان باللون التركوازي */
+        color: white; /* لون خط العنوان بالأبيض */
+        text-align: left; /* محاذاة النص إلى اليسار */
+        padding: 10px; /* إضافة مسافة داخلية حول العنوان */
+    }
+
+    ul {
+        list-style-type: disc; /* النقاط الممتلئة للقائمة الرئيسية */
+        margin-left: 20px; /* إضافة مسافة يسارية للقائمة */
+    }
+    
+    ul ul { 
+        list-style-type: circle; /* دوائر مفرغة للقوائم الفرعية */
+        margin-left: 20px; /* إضافة مسافة يسارية للقائمة الفرعية */
+    }
+
+li {
+    margin: 10px 0; /* مسافة بين عناصر القائمة */
+    font-size: 1.2em; /* زيادة حجم الخط لعناصر القائمة */
+}
+
+.table-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* توسيط العناصر عموديًا */
+    justify-content: center; /* توسيط العناصر أفقيًا */
+    width: 100%; /* ملء عرض الصفحة بالكامل */
+}
+
+/* تصميم الجداول */
+table {
+    border-collapse: collapse;
+    width: auto; /* السماح للعرض بأن يكون تلقائيًا وفق المحتوى */
+    margin: 20px 0; /* إضافة مسافة من الأعلى والأسفل */
+}
+
+/* تصميم حدود الخلايا وتوسيط النص */
+table, th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+}
+
+/* تنسيق العنوان داخل الجدول */
+caption {
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #333;
+    font-size: 1.2em;
+}

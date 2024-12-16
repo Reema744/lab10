@@ -1,0 +1,81 @@
+{% extends "bookmodule/layouts/base.html" %}
+{% load static %}
+
+{% block title %}Add Book{% endblock %}
+
+{% block content %}
+  <h1>Add a New Book</h1>
+  
+  <!-- عرض الأخطاء إذا كانت هناك أخطاء في النموذج -->
+  {% if form.errors %}
+    <div class="error">
+      <p><strong>Please correct the errors below:</strong></p>
+      <ul>
+        {% for field in form %}
+          {% for error in field.errors %}
+            <li>{{ error }}</li>
+          {% endfor %}
+        {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
+  
+  <!-- نموذج إضافة الكتاب -->
+  <form method="post" class="book-form">
+    {% csrf_token %}
+    
+    <!-- عرض الحقول النموذج -->
+    <div class="form-field">
+      <label for="{{ form.title.id_for_label }}">Title:</label>
+      {{ form.title }}
+      {% if form.title.errors %}
+        <ul class="error">
+          {% for error in form.title.errors %}
+            <li>{{ error }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </div>
+    
+    <div class="form-field">
+      <label for="{{ form.author.id_for_label }}">Author:</label>
+      {{ form.author }}
+      {% if form.author.errors %}
+        <ul class="error">
+          {% for error in form.author.errors %}
+            <li>{{ error }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </div>
+    
+    <div class="form-field">
+      <label for="{{ form.publication_date.id_for_label }}">Publication Date:</label>
+      {{ form.publication_date }}
+      {% if form.publication_date.errors %}
+        <ul class="error">
+          {% for error in form.publication_date.errors %}
+            <li>{{ error }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </div>
+    
+    <div class="form-field">
+      <label for="{{ form.isbn.id_for_label }}">ISBN:</label>
+      {{ form.isbn }}
+      {% if form.isbn.errors %}
+        <ul class="error">
+          {% for error in form.isbn.errors %}
+            <li>{{ error }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </div>
+    
+    <!-- زر الإرسال -->
+    <button type="submit" class="btn btn-primary">Add Book</button>
+  </form>
+  
+  <link rel="stylesheet" href="{% static 'bookmodule/css/main.css' %}">
+{% endblock %}

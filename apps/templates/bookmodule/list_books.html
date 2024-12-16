@@ -1,0 +1,29 @@
+{% extends "bookmodule/layouts/base.html" %}
+{% load static %}
+
+{% block title %}List of Books{% endblock %} <!-- عنوان الصفحة -->
+
+{% block content %}
+  {% include 'bookmodule/includes/header.html' %} <!-- تضمين ملف الهيدر -->
+  
+  <h1>List of Books</h1>
+  <ul>
+      {% for book in books %}
+          <li>
+              <a href="{% url 'books.view_one_book' book.id %}">{{ book.title }}</a>
+              <!-- روابط تعديل وحذف الكتاب -->
+              <a href="{% url 'edit_book' book.id %}">Edit</a>
+              <a href="{% url 'delete_book' book.id %}">Delete</a>
+          </li>
+      {% endfor %}
+      <!-- إذا لم يكن هناك كتب، يمكن إضافة رسالة توضح ذلك -->
+      {% if not books %}
+          <li>No books available.</li>
+      {% endif %}
+  </ul>
+  
+  <!-- رابط إضافة كتاب جديد -->
+  <a href="{% url 'add_book' %}" class="btn btn-primary">Add New Book</a>
+  
+  <link rel="stylesheet" href="{% static 'bookmodule/css/main.css' %}">
+{% endblock %}

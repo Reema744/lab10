@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+
+<head>
+  <title>Show One Book</title>
+  <meta name="keywords" content="Books, recent, Learning, library">
+  <meta name="description" content="Books website">
+  <meta name="author" content="author name">
+  
+  <!-- رابط CSS باستخدام العلامة static -->
+  <link rel="stylesheet" href="{% static 'styles.css' %}">
+  <link rel="icon" href="{% static 'qu-icon.png' %}">
+  
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="{% static 'bookmodule/css/main.css' %}">
+  <a href="#link1" class="custom-link">الرابط 1</a>
+</head>
+
+<body>
+  {% include 'bookmodule/includes/header.html' %} <!-- تضمين ملف الهيدر -->
+
+  <!-- زر العودة إلى قائمة الكتب -->
+  <a href="{% url 'books.list_books' %}">Go Back</a>
+
+  <!-- تفاصيل الكتاب -->
+  <h1>Details of Book1</h1>
+  <h2>{{ book.title }}</h2> <!-- استخدام المتغير book من سياق العرض -->
+  <h2>Author: {{ book.author }}</h2> <!-- استخدام المتغير book من سياق العرض -->
+  <p><strong>{{ book.title }}, 5/e</strong> provides an introduction to Internet and web programming. Suitable for both introductory and intermediate levels.</p>
+
+  <img src="{% static 'book1.jpg' %}" alt="Book1 image" width="200" height="200">
+</body>
+</html>
